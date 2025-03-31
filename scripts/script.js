@@ -1,4 +1,4 @@
-const wrapper = document.querySelector('.wrapper');
+/*const wrapper = document.querySelector('.wrapper');
 const loginLink = document.querySelector('.login-link');
 const registerLink = document.querySelector('.register-link');
 const btnPopup = document.querySelector('.btnLogin-popup');
@@ -18,4 +18,4 @@ btnPopup.addEventListener('click', ()=> {
 
 iconClose.addEventListener('click', ()=> {
     wrapper.classList.remove('active-popup');
-})
+})*/
