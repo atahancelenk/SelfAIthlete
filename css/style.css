@@ -1,9 +1,11 @@
-/*font ayarla*/
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 :root {
