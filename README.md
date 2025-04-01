@@ -1,2 +1,2 @@
 # SelfAIthlete
-An AI-powered website developed for a graduation project.
+It is an AI-powered health and fitness website for a graduation project.
