@@ -1,21 +1,24 @@
-/*const wrapper = document.querySelector('.wrapper');
-const loginLink = document.querySelector('.login-link');
-const registerLink = document.querySelector('.register-link');
-const btnPopup = document.querySelector('.btnLogin-popup');
-const iconClose = document.querySelector('.icon-close');
+const header = document.querySelector('header');
 
-registerLink.addEventListener('click', ()=> {
-    wrapper.classList.add('active');
+function fixedNavbar() {
+    header.classList.toggle('scrolled', window.pageYOffset > 0);
+}
+
+fixedNavbar();
+window.addEventListener('scroll', fixedNavbar);
+
+let menu = document.querySelector('#menu-btn');
+let userBtn = document.querySelector('#user-btn');
+
+menu.addEventListener('click', function() {
+    let nav = document.querySelector('.navbar');
+    nav.classList.toggle('active');
 })
 
-loginLink.addEventListener('click', ()=> {
-    wrapper.classList.remove('active');
+userBtn.addEventListener('click', function() {
+    let nav = document.querySelector('.user-box');
+    userBox.classList.toggle('active');
 })
 
-btnPopup.addEventListener('click', ()=> {
-    wrapper.classList.add('active-popup');
-})
 
-iconClose.addEventListener('click', ()=> {
-    wrapper.classList.remove('active-popup');
-})*/
+
