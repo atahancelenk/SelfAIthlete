@@ -81,7 +81,7 @@ ul {
     margin: 0 auto;
     margin-bottom: 2rem;
     width: 59%;
-    padding: .5ren 1.5ren;
+    padding: .5rem 1.5rem;
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
@@ -202,7 +202,8 @@ input[type=submit] {
     /*background-image: url('img/14.png');*/
     width: 316px;
     height: 245px;
-    background-size: 316px;
+    background-size: 314px;
+    background-repeat: no-repeat;
 }
 
 .banner .detail {
@@ -260,7 +261,7 @@ header.scrolled a:hover {
     justify-content: space-between;
     align-items: center;
     position: relative;
-    margin: 0 atuo;
+    margin: 0 auto;
 }
 
 .navbar a {
@@ -278,4 +279,79 @@ header .icons i:hover {
 
 .header .icons {
     display: flex;
+}
+
+.header .icons i {
+    margin-left: 1.2rem;
+    font-size: 1.5rem;
+    color: #000;
+    cursor: pointer;
+}
+
+#menu-btn {
+    display: none;
+}
+
+.header .user-box {
+    position: absolute;
+    top: 120%;
+    right: 2rem;
+    background: rgb(255 255 255/80%);
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+    padding: 1rem;
+    text-align: center;
+    width: 20rem;
+    transform: scale(1.0);
+    transform-origin: top-right;
+    line-height: 2;
+}
+
+.logout-btn {
+    background: #000;
+    color: #fff;
+    text-transform: uppercase;
+    width: 10rem;
+    border-radius: 4px;
+}
+
+.header .user-box.active {
+    transform: scale(1.0);
+    transition: .2s linear;
+}
+
+/*-----Media Screen-----*/
+@media (max-width: 991px) {
+    #menu-btn {
+        display: block;
+    }
+    
+    .header .flex .navbar {
+        position: absolute;
+        top: 149%;
+        left: 0;
+        display: block;
+        right: 0;
+        border-top: 1px solid #000;
+        background: #fff;
+        transition: .3s ease;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    .header .flex .navbar.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .header .flex .navbar a {
+        display: block;
+        margin: 2rem;
+    }
+
+    .header .flex .navbar a:hover {
+        color: var(--orange);
+    }
+
+    .banner .detail {
+        left: 10%;
+    }    
 }
