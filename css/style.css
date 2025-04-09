@@ -368,6 +368,50 @@ header .icons i:hover {
     text-transform: capitalize;
     margin: .5rem 0;
 }
+/*-----Admin Product Page-----*/
+.add-product {
+    margin-top: -3.5rem;
+    height: auto;
+    background: #f5f5f5;
+    position: relative;
+}
+
+.show-products {
+    position: relative;
+    background: var(--orange);
+    margin-top: -3.5rem;
+}
+
+.show-products::before {
+    background-image: url('img/homewallpaper.jpg');
+    top: -100px;
+}
+
+.show-products .box-container {
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+}
+
+.box-container .box {
+    line-height: 2;
+}
+
+.box-container .box h4 {
+    text-transform: capitalize;
+}
+
+.box-container .box img {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.edit,
+.delete {
+    color: black;
+    background: var(--orange);
+    padding: .5rem 1.5rem;
+    text-transform: capitalize;
+    line-height: 2;
+}
 
 /*-----Media Screen-----*/
 @media (max-width: 991px) {
