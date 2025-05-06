@@ -25,7 +25,7 @@ if (isset($_POST['submit-btn'])) {
             $_SESSION['user_email'] = $row['email'];
             $_SESSION['user_id'] = $row['id'];
             $_SESSION['user_type'] = 'user';
-            header('location:index.php');
+            header('location:home.php');
         } else {
             $message[] = 'Incorrect email or password!';
         }
@@ -73,7 +73,7 @@ if (isset($_POST['submit-btn'])) {
             </div>
             <input type="submit" name="submit-btn" value="Login Now" class="btn">
             <p>Do not have an account? <a href="register.php">Register Now</a></p>
-            <p>Want to go back <a href="home.html">home</a>?</p>
+            <p>Want to go back <a href="index.php">home</a>?</p>
         </form>
     </section>
 </body>
