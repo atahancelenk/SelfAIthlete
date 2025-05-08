@@ -1,16 +1,6 @@
 <?php
+    include 'admin_auth.php';
     include 'connection.php';
-    session_start();
-    $admin_id = $_SESSION['admin_name'];
-
-    if (!isset($admin_id)) {
-        header('location:login.php');
-    }
-
-    if (isset($_POST['logout'])) {
-        session_destroy();
-        header('location:login.php');
-    }
 ?>
 
 <!DOCTYPE html>
@@ -27,44 +17,6 @@
     <div class="line4"></div>
     <section class="dashboard">
         <div class="box-container">
-            <div class="box">
-                <?php 
-                    $total_pendings = 0;
-                    $select_pendings = mysqli_query($conn, "SELECT * FROM `orders` WHERE payment_status = 'pending'") or die('query failed');
-                    while ($fetch_pendings = mysqli_fetch_assoc($select_pendings)) {
-                        $total_pendings += $fetch_pendings['total_price'];
-                    }
-                ?>
-                <h3>$<?php echo $total_pendings; ?></h3>
-                <p>Total Pendings</p>
-            </div>
-            <div class="box">
-                <?php 
-                    $total_completes = 0;
-                    $select_completes = mysqli_query($conn, "SELECT * FROM `orders` WHERE payment_status = 'complete'") or die('query failed');
-                    while ($fetch_completes = mysqli_fetch_assoc($select_completes)) {
-                        $total_completes += $fetch_completes['total_price'];
-                    }
-                ?>
-                <h3>$<?php echo $total_completes; ?></h3>
-                <p>Total Completes</p>
-            </div>
-            <div class="box">
-                <?php 
-                    $select_orders = mysqli_query($conn, "SELECT * FROM `orders`") or die('query failed');
-                    $num_of_orders = mysqli_num_rows($select_orders);
-                ?>
-                <h3><?php echo $num_of_orders; ?></h3>
-                <p>Order Placed</p>
-            </div>
-            <div class="box">
-                <?php 
-                    $select_products = mysqli_query($conn, "SELECT * FROM `orders`") or die('query failed');
-                    $num_of_products = mysqli_num_rows($select_products);
-                ?>
-                <h3><?php echo $num_of_products; ?></h3>
-                <p>Products Added</p>
-            </div>
             <div class="box">
                 <?php 
                     $select_users = mysqli_query($conn, "SELECT * FROM `users` WHERE user_type = 'user' ") or die('query failed');
@@ -89,16 +41,7 @@
                 <h3><?php echo $num_of_users; ?></h3>
                 <p>Total Registered Users</p>
             </div>
-            <div class="box">
-                <?php 
-                    $select_message = mysqli_query($conn, "SELECT * FROM `message` ") or die('query failed');
-                    $num_of_message = mysqli_num_rows($select_message);
-                ?>
-                <h3><?php echo $num_of_message; ?>-</h3>
-                <p>New Messages</p>
-            </div>
         </div>
     </section>
-    <script type="text/javascript" src="scripts/script.js"></script>
 </body>
 </html>
