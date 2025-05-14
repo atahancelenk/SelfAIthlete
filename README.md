@@ -1,2 +1,5 @@
 # SelfAIthlete
-It is an AI-powered health and fitness website for a graduation project.
+
+The primary goal of this project is to develop a user-friendly platform that empowers individuals to create and customize their fitness and diet programs with ease. By leveraging artificial intelligence, the app will provide personalized suggestions for exercises and meal plans, tailored to the user’s specific needs, such as allergies, health conditions, or work schedules. 
+
+A core feature of the platform is its ability to track user progress through interactive visual feedback, including graphs and milestone badges, fostering long-term motivation and engagement. Additionally, the app aims to educate users by offering detailed insights into exercises, highlighting the muscles targeted with visual diagrams and step-by-step GIF tutorials, as well as providing comprehensive nutritional data for various food items. This combination of personalization, tracking, and education creates a holistic solution to support users in achieving their health and fitness goals.
