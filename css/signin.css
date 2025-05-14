@@ -9,7 +9,7 @@ body {
 }
 
 :root {
-    --orange: #fcc927;
+    --blue: #3498db;
 }
 
 a {
@@ -55,7 +55,7 @@ input[type=submit] {
 
 /*-----form-container-----*/
 .form-container {
-    background: var(--orange);
+    background: var(--blue);
     width: 100%;
     min-height: 100vh;
     padding: 4rem 0;
@@ -94,7 +94,7 @@ input[type=submit] {
     padding: .8rem 2.5em;
     text-transform: uppercase;
     background: #fff;
-    color: var(--orange);
+    color: var(--blue);
     border-radius: 10px;
     cursor: pointer;
     border: none;
@@ -130,6 +130,6 @@ input[type=submit] {
 }
 
 input:focus {
-    border-color: var(--orange);
-    box-shadow: 0 0 5px rgba(252, 201, 39, 0.5);
+    border-color: var(--blue);
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
 }
