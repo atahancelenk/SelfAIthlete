@@ -67,7 +67,7 @@ if (isset($_POST['submit-btn'])) {
             <input type="password" name="cpassword" placeholder="Confrim Your Password" required>
             <input type="submit" name="submit-btn" value="Register Now" class="btn">
             <p>Already have an account? <a href="login.php">Login</a></p>
-            <p>Want to go back <a href="index.html">home</a>?</p>
+            <p>Want to go back <a href="index.php">home</a>?</p>
         </form>
     </section>
 </body>
