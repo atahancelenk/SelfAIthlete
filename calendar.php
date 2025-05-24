@@ -1,10 +1,10 @@
-
 <?php
 include 'auth.php';
 include 'connection.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Diet Calendar</title>
@@ -12,14 +12,22 @@ include 'connection.php';
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
     <style>
-        body { padding: 20px; background-color: #f8f9fa; }
-        #calendar { max-width: 900px; margin: 0 auto; }
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+
+        #calendar {
+            max-width: 900px;
+            margin: 0 auto;
+        }
     </style>
     <?php include 'header.php'; ?>
 </head>
+
 <body>
     <div class="container">
-        <h2 class="text-center text-primary fw-bold mb-4">📅 Diet Plan Calendar</h2>
+        <h2 class="text-center text-primary fw-bold mb-4">📅 Plan Calendar</h2>
         <div id="calendar"></div>
     </div>
 
@@ -40,4 +48,5 @@ include 'connection.php';
         });
     </script>
 </body>
+
 </html>
