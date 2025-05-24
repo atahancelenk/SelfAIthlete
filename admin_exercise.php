@@ -37,7 +37,7 @@ if (isset($_POST['update_exercise'])) {
 $exercises = mysqli_query($conn, "SELECT * FROM exercises");
 
 // Muscle group filters
-$muscleGroups = ["Chest", "Back", "Legs", "Shoulders", "Abs", "Arms"];
+$muscleGroups = ["Chest", "Back", "Leg", "Shoulder", "Abs", "Arm"];
 ?>
 
 <!DOCTYPE html>
