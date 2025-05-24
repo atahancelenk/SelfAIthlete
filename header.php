@@ -290,7 +290,7 @@ include 'connection.php';
 <body>
     <header>
         <nav class="navbar">
-            <a href="home.php" class="logo">
+            <a href="home.php" class="logo" style="font-size: 28px; font-weight: bold;">
                 <i class="bi bi-activity logo-icon"></i>
                 Self<span>AIthlete</span>
             </a>
@@ -327,6 +327,9 @@ include 'connection.php';
                         <p><i class="bi bi-person-fill"></i> Username: <span><?php echo htmlspecialchars($_SESSION['user_name'] ?? 'User'); ?></span></p>
                         <p><i class="bi bi-envelope-fill"></i> Email: <span><?php echo htmlspecialchars($_SESSION['user_email'] ?? 'user@selfaithlete.com'); ?></span></p>
                         <p><i class="bi bi-shield-lock"></i> Role: <span>Member</span></p>
+                        <a href="profile.php" class="btn btn-sm btn-outline-light mb-2 w-100 d-flex align-items-center justify-content-center gap-2">
+                            <i class="bi bi-gear"></i> Profile Settings
+                        </a>
                         <form action="logout.php" method="post">
                             <button type="submit" class="logout-btn">
                                 <i class="bi bi-box-arrow-right"></i> Log Out

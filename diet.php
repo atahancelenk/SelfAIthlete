@@ -10,6 +10,30 @@ mysqli_stmt_bind_param($stmt, "s", $searchTerm);
 mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
 $foods = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+$total_calories = 0;
+$total_protein = 0;
+$total_fat = 0;
+$total_carbs = 0;
+
+if (!empty($_SESSION['selected_foods'])) {
+    foreach ($_SESSION['selected_foods'] as $food) {
+        $quantity = isset($food['amount']) ? floatval($food['amount']) : 1;
+        $unit = isset($food['default_unit']) ? $food['default_unit'] : 'adet';
+
+        // Miktar çarpanı belirle
+        if ($unit === '100g' || $unit === '100ml') {
+            $multiplier = $quantity / 100;
+        } else {
+            $multiplier = $quantity;
+        }
+
+        $total_calories += $food['calories'] * $multiplier;
+        $total_protein  += $food['protein'] * $multiplier;
+        $total_fat      += $food['fat'] * $multiplier;
+        $total_carbs    += $food['carbs'] * $multiplier;
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -136,7 +160,12 @@ $foods = mysqli_fetch_all($result, MYSQLI_ASSOC);
                             <tbody></tbody>
                         </table>
                     </div>
-                    <p id="totals" class="fw-bold">Total: 0 kcal | 0g protein | 0g fat | 0g carbs</p>
+                    <p id="totals" class="fw-bold">
+                        Total: <?= round($total_calories, 1) ?> kcal |
+                        <?= round($total_protein, 1) ?>g protein |
+                        <?= round($total_fat, 1) ?>g fat |
+                        <?= round($total_carbs, 1) ?>g carbs
+                    </p>
                     <div class="mb-3">
                         <label for="plan_name" class="form-label">Plan Name:</label>
                         <input type="text" name="plan_name" class="form-control" required>
@@ -159,7 +188,7 @@ $foods = mysqli_fetch_all($result, MYSQLI_ASSOC);
                 return;
             }
 
-            const multiplier = (defaultUnit === 'piece') ? amount : amount / 100.0;
+            const multiplier = (defaultUnit === 'piece' || defaultUnit === 'adet') ? amount : amount / 100.0;
 
             const adjCalories = (calories * multiplier).toFixed(1);
             const adjProtein = (protein * multiplier).toFixed(1);

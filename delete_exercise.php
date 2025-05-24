@@ -30,4 +30,3 @@ $del_plan->execute();
 
 header("Location: exercises.php");
 exit;
-?>
